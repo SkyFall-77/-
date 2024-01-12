@@ -1,3 +1,44 @@
+# First bash
+
+1.Напишите сценарий, который принимает целое число в качестве аргумента и возвращает «Четное» для четных чисел или «Нечетное» для нечетных чисел.
+```bash
+#!/bin/bash
+
+if [ $# -eq 0]; then
+        echo "Enter an interger number:"
+        exit 1
+fi
+
+number=$1
+if [$((number %2)) -eq 0]; then
+    echo "Even"
+ else
+    echo "Edd"
+fi
+```
+
+2. Создайте функцию, которая проверяет, делится ли число n на два числа x И y. Все входные данные являются положительными, ненулевыми числами.
+```bash
+#!/bin/bash
+check() {
+    if [ $# -ne 3 ]; then
+        echo "n x y"
+        return 1
+fi
+
+local n=$1
+local x=$2
+local y=$3
+    if ((n % x ==0 && n % y ==0)); then
+    echo "true, because $n is divisible on $x and $y"
+else
+    echo "false, because $n is not divisible on $x and $y"
+fi
+}
+check "$1" "$2" "$3"
+```
+
+
 # Bash(task1)
 
 
