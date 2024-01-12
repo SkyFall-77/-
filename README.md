@@ -197,10 +197,11 @@ fi
 ```
 
 
----Bash(task2)
+---
+Bash(task2)
 1.Суммирование
 Напишите программу, которая находит суммирование каждого числа от 1 до num. Число всегда будет целым положительным числом, большим 0.
-
+```bash
 #!/bin/bash
 
 if [ $# -ne 1];  then
@@ -215,6 +216,8 @@ for ((i = 1; i <= n;  i++)); do
 done 
 
 echo "sum 1 to $n: $sum"
+```
+
 2.Возьмите 2 строки s1 и s2, включающие только буквы от a до z.
 Возвращает новую отсортированную строку, максимально длинную, содержащую различные буквы - каждая из которых берется только один раз - исходящие из s1 или s2.
 a = "xyaabbbccccdefww"
@@ -222,7 +225,7 @@ b = "xxxxyyyyabklmopq"
 longest(a, b) -> "abcdefklmopqwxy"
 a = "abcdefghijklmnopqrstuvwxyz"
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
-
+```bash
 #!/bin/bash
 
 s1=$1
@@ -233,13 +236,15 @@ else
    combined=$(echo "$s1" | grep -0 . | sort -u | tr -d '\n\')
 fi
 echo "$combined"
-Джон пригласил друзей. Его список:
+```
+3.Джон пригласил друзей. Его список:
 S="Ann:Russel;John:Gates;Paul:Wahl;Alex:Tolkien;Ann:Bell;Lewis:Kern;Sarah:Rudd;Sydney:Korn;Madison:Meta";
 Нужно написать программу, которая переводит эту строку в верхний регистр и сортирует ее в алфавитном порядке по фамилии.
 Если фамилии совпадают, отсортируйте их по имени. Фамилия и имя гостя вводятся в результате в скобках через запятую.
 Таким образом, результатом будет:
 "(BELL, ANN)(GATES, JOHN)(KERN, LEWIS)(KORN, SYDNEY)(META, MADISON)(RUDD, SARAH)(RUSSEL, ANN)(TOLKIEN, ALEX)(WAHL, PAUL)"
 Может случиться так, что в двух разных семьях с одинаковой фамилией два человека также имеют одинаковое имя.
+```bash
 #!/bin/bash
 
 input="ann:Russel;John:Gates;Paul:Wahl;Alex:Tolkien;Ann:Bell;Lewis:Kern;Sarah:Rudd;Sydney:Korn;Madison:Meta";
@@ -251,6 +256,7 @@ while DATA=':' read -r name surname; do
 done <<< "$sorted_input"
 
 echo "$resultat"
+```
 
 
 
